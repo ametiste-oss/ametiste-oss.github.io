@@ -1,4 +1,4 @@
-# Source : https://github.com/Yelp/yelp.github.io/blob/master/js/opensource-site.js
+// # Source : https://github.com/Yelp/yelp.github.io/blob/master/js/opensource-site.js
 
 $(document).ready(function() {
   var projects = 0;
