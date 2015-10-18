@@ -1,3 +1,4 @@
+oss_projects = {};
 oss_projects['ametiste-metrics'] = {
   featured: true,
   position: 1
