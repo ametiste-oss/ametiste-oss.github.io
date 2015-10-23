@@ -113,7 +113,7 @@ Repository.prototype.repoContent = function() {
 }
 
 Repository.prototype.bottomLinks = function() {
-  if (this.blogPost()) {
+  if (this.blogPost() || this.getJavadocLink()) {
     return [
       '<div class="island-item bottom-links">',
         this.getBlogLink(),
