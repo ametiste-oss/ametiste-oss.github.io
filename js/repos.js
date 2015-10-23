@@ -61,7 +61,7 @@ Repository.prototype.getBlogLink = function() {
   }
 }
 
-Repository.prototype.getBlogLink = function() {
+Repository.prototype.getJavaDocLink = function() {
   if (this.javaDoc()) {
     return '<a href="'+ this.javaDoc() +'" target="_blank"><span class="octicon octicon-file-text"></span> JavaDoc</a> ';
   }
@@ -113,11 +113,11 @@ Repository.prototype.repoContent = function() {
 }
 
 Repository.prototype.bottomLinks = function() {
-  if (this.blogPost() || this.getJavadocLink()) {
+  if (this.blogPost() || this.javaDoc()) {
     return [
       '<div class="island-item bottom-links">',
         this.getBlogLink(),
-        this.getJavadocLink(),
+        this.getJavaDocLink(),
       '</div>'
     ].join('');
   }
