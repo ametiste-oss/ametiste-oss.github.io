@@ -15,6 +15,12 @@ Repository.prototype.blogPost = function() {
   }
 }
 
+Repository.prototype.javaDoc = function() {
+  if (oss_projects[this.name] && oss_projects[this.name].javadoc) {
+    return oss_projects[this.name].javadoc;
+  }
+}
+
 Repository.prototype.featured = function() {
   return oss_projects[this.name] && oss_projects[this.name].featured;
 }
@@ -52,6 +58,12 @@ Repository.prototype.classes = function() {
 Repository.prototype.getBlogLink = function() {
   if (this.blogPost()) {
     return '<a href="'+ this.blogPost() +'" target="_blank"><span class="octicon octicon-file-text"></span> Blog post</a> ';
+  }
+}
+
+Repository.prototype.getBlogLink = function() {
+  if (this.javaDoc()) {
+    return '<a href="'+ this.javaDoc() +'" target="_blank"><span class="octicon octicon-file-text"></span> JavaDoc</a> ';
   }
 }
 
@@ -105,6 +117,7 @@ Repository.prototype.bottomLinks = function() {
     return [
       '<div class="island-item bottom-links">',
         this.getBlogLink(),
+        this.getJavadocLink(),
       '</div>'
     ].join('');
   }
